@@ -1,0 +1,29 @@
+{
+  "name": "auditor-search-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-react": "^6.11.0",
+    "babelify": "^7.3.0",
+    "classnames": "^2.2.5",
+    "moment": "^2.14.1",
+    "react": "^15.1.0",
+    "react-autocomplete": "git+https://github.com/reactjs/react-autocomplete.git",
+    "react-dom": "^15.1.0",
+    "react-select": "^1.0.0-beta14",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "browserify": "^13.0.1",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0"
+  }
+}
