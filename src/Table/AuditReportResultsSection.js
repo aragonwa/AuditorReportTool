@@ -1,7 +1,6 @@
 var ReactDOM = require('react-dom');
 var React = require('react');
 var moment = require('moment');
-//var AuditReportResultsItem = require('./AuditReportResultsItem');
 
 module.exports = React.createClass({
   displayName: 'AuditReportResultsSection',

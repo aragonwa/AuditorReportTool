@@ -6,10 +6,6 @@ var _ = require('underscore');
 
 module.exports = React.createClass({
   displayName: 'DepartmentFilter',
-  // filterByDeptSelectChange: function (evt) {
-  //   this.props.filterByDeptSelect(evt.target.value);
-  //   this.props.setPageNum(1)
-  // },
   filterByDeptSelectChange: function (dept) {
     if(dept) {
       this.props.filterByDeptSelect(dept.value);
