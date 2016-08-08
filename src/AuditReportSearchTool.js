@@ -43,11 +43,6 @@ module.exports = React.createClass({
       filterDeptSelect: selectOption
     });
   },
-  filterByReportNum: function(text) {
-    this.setState({
-      filterReportNum: text
-    });
-  },
   filterByPubYearSelect: function(selectOption) {
     this.setState({
       filterPubYearSelect: selectOption
@@ -68,7 +63,6 @@ module.exports = React.createClass({
     var filteredAudits = this.state.filteredAudits;
     var filterSearchText = this.state.filterSearchText;
     var filterDeptSelect = this.state.filterDeptSelect;
-    //var filterReportNum = this.state.filterReportNum;
     var filterPubYearSelect = this.state.filterPubYearSelect;
 
     var pageNum = this.state.pageNum;
@@ -81,7 +75,6 @@ module.exports = React.createClass({
     var auditSubset = [];
  
     // If filter is present, show filtered items
-    //if(filterSearchText || filterDeptSelect || filterReportNum || filterPubYearSelect){
     if(filterSearchText || filterDeptSelect || filterPubYearSelect){
 
       allAudits.forEach(function(audit, i){
@@ -99,12 +92,6 @@ module.exports = React.createClass({
             return;
           }        
         }
-        // Report number filter 
-        // if(filterReportNum) {
-        //   if (audit['ProjectNum'].indexOf(filterReportNum) === -1) {
-        //     return;
-        //   } 
-        // }
         // Publish Year filter 
         if(filterPubYearSelect) {
           if (audit.Date_Published.slice(-4) !== filterPubYearSelect && audit.FollowUpDate.slice(-4) !== filterPubYearSelect ) {

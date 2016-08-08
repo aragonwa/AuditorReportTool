@@ -2,7 +2,6 @@ var ReactDOM = require('react-dom');
 var React = require('react');
 var SearchFilter = require('./SearchFilter');
 var DepartmentFilter = require('./DepartmentFilter');
-//var ReportFilter = require('./ReportNumFilter');
 var PublishYearFilter = require('./PublishYearFilter');
 
 module.exports = React.createClass({
