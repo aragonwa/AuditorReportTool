@@ -19,8 +19,8 @@ module.exports = React.createClass({
       this.props.setPageNum(1);
     }
   },
-  render: function () {
-
+  render: function () { 
+    
     var depts = this.props.depts;
     var deptsListItems = [];
     var deptsOptions = _.map(depts, function(dept){ var deptObj = {value: dept, label: dept}; return deptObj });
@@ -29,10 +29,6 @@ module.exports = React.createClass({
     depts.forEach(function (dept, i) {
       deptsListItems.push(<option key={i} value={dept.toLowerCase() }>{dept}</option>)
     });
-// <select onChange={this.filterByDeptSelectChange} className="form-control" style={{marginBottom : '15px'}}>
-//           <option value="">--Show all--</option>
-//           {deptsListItems}
-//         </select>
     return (
 
       <div className="col-sm-8">
