@@ -24,6 +24,8 @@
     "babel-preset-react": "^6.11.1",
     "browserify": "^13.0.1",
     "grunt": "^1.0.1",
-    "grunt-browserify": "^5.0.0"
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-env": "^0.4.4"
   }
 }

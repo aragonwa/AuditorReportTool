@@ -48,7 +48,7 @@ module.exports = React.createClass({
     } else {
       nextDisabledClass = 'next';
     }
-    for(let i = 0; i < Math.ceil(audits.length/itemsPerPage); i++) {
+    for(var i = 0; i < Math.ceil(audits.length/itemsPerPage); i++) {
       //If page num is equal to current page add class .active
       if(pageNum === (i+1))
       {
