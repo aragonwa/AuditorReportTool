@@ -27,6 +27,7 @@ module.exports = function (grunt) {
       scripts: {
         files: ["src/**"],
         tasks: ["env", "browserify", "uglify"]
+        //tasks: ["browserify"]
       }
     }
   });
