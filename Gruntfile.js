@@ -24,6 +24,9 @@ module.exports = function (grunt) {
       }
     },
     watch: {
+      options:  {
+        atBegin: true
+      },
       scripts: {
         files: ["src/**"],
         tasks: ["env", "browserify", "uglify"]
