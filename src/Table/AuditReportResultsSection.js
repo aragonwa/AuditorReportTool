@@ -8,13 +8,13 @@ module.exports = React.createClass({
     var reportItems = [];
     //var reports = this.props.audit.reports;
     var reportPubDate = this.props.audit.Date_Published;
-    var formatedReportPubDate = moment(reportPubDate, 'MM-DD-YYYY').format('MMMM M, YYYY');
+    var formatedReportPubDate = moment(reportPubDate, 'MM-DD-YYYY').format('MMMM D, YYYY');
     
     var reportFollowUpDateVisible = 'show';
     var reportFollowUpDate;
     if(this.props.audit.FollowUpDate) {
       reportFollowUpDateVisible = 'show';
-      reportFollowUpDate = moment(this.props.audit.FollowUpDate, 'MM-DD-YYYY').format('MMMM M, YYYY');
+      reportFollowUpDate = moment(this.props.audit.FollowUpDate, 'MM-DD-YYYY').format('MMMM D, YYYY');
     } else {
         reportFollowUpDateVisible = 'hidden';
     }
