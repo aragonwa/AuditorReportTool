@@ -1,4 +1,3 @@
-var ReactDOM = require('react-dom');
 var React = require('react');
 var Select = require('react-select');
 var _ = require('underscore');
@@ -17,7 +16,7 @@ module.exports = React.createClass({
   },
   render: function () { 
     
-    var depts = this.props.depts;
+    var depts = this.props.depts.sort();
     var deptsListItems = [];
     var deptsOptions = _.map(depts, function(dept){ var deptObj = {value: dept, label: dept}; return deptObj });
     deptsOptions.unshift({value: '', label:'--Show all--'})
