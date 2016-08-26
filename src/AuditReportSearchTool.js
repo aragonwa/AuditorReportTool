@@ -1,4 +1,3 @@
-var ReactDOM = require('react-dom');
 var React = require('react');
 var _ = require('underscore');
 var AuditReportFilters = require('./Filters/AuditReportFilters');
@@ -26,7 +25,7 @@ module.exports = React.createClass({
       dataType: 'json',
       cache: false,
       success: function(data) {
-        this.setState({audits: data.data, filteredAudits: data.data});
+        this.setState({audits: data.data.reports, filteredAudits: data.data.reports, depts: data.data.depts});
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
@@ -70,7 +69,8 @@ module.exports = React.createClass({
     var itemsPerPage = ITEMSPERPAGE;
     
     var auditItems = [];
-    var depts = [];
+    // Set department drop options
+    var depts = this.state.depts;
     var pubYears = [];
     var auditSubset = [];
  
@@ -88,7 +88,8 @@ module.exports = React.createClass({
 
         // Department filter
         if(filterDeptSelect){
-          if (audit.Dept.toLowerCase() !== filterDeptSelect.toLowerCase()) {
+          //if (audit.Dept.toLowerCase() !== filterDeptSelect.toLowerCase()){
+          if(audit.DeptFilter.toLowerCase().indexOf(filterDeptSelect.toLowerCase()) === -1){
             return;
           }        
         }
@@ -107,10 +108,10 @@ module.exports = React.createClass({
 
     if (allAudits) {
       // Set department drop options
-      allAudits.forEach(function(audit){
-        depts.push(audit.Dept);
-      });
-      depts = _.uniq(depts).sort();
+      //allAudits.forEach(function(audit){
+        // depts.push(audit.Dept);
+      //});
+      //depts = _.uniq(depts).sort();
 
       // Set publish year drop options
       allAudits.forEach(function(audit){
