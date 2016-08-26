@@ -1,4 +1,3 @@
-var ReactDOM = require('react-dom');
 var React = require('react');
 var _ = require('underscore');
 var moment = require('moment');
@@ -9,7 +8,7 @@ module.exports = React.createClass({
   displayName: 'AuditReportTable',
   render: function () {
     //Sort audits in reverse chronological order
-    var audits = _.sortBy(this.props.audits, function(audit) { var date = moment(audit.Date_Published, 'MM-DD-YYYY').format(); return date; })
+    var audits = _.sortBy(this.props.audits, function(audit) { var date = moment(audit.SortDate, 'MM-DD-YYYY').format(); return date; })
     audits.reverse();
 
     var pageNum = this.props.pageNum;
@@ -23,7 +22,7 @@ module.exports = React.createClass({
     }.bind(this));
     // Check for empty array and display error
     if (auditItems === undefined || auditItems.length == 0) {
-      auditItems.push(<div key="0" className="text-danger" style={{fontSize: '20px'}}><span className={errorClasses} style={{paddingBottom:'15px'}}></span> Sorry, no results</div>);
+      auditItems.push(<div key="0" className="alert alert-danger" role="alert" style={{fontSize: '20px'}}><p><span className={errorClasses}></span> Sorry, no results for your search.</p><p>Try a different search term or apply a different filter.</p></div>);
     }
 
     auditItems = _.first((_.rest(auditItems, [(pageNum - 1) * itemsPerPage])), itemsPerPage);
